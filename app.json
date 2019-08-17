@@ -1,15 +1,15 @@
 {
-    "name": "DEPlus API",
-    "description": "API rest of help CI with Jenkins and Docker",
-    "keywords": [
-      "go",
-      "postgresql",
-      "CI",
-      "Jenkins",
-      "Docker",
-      "DEPlus"
-    ],
-    "version": "0.1",
-    "website": "https://github.com/betonr/deplus-api",
-    "repository": "https://github.com/betonr/deplus-api"
-  }
+  "name": "DEPlus API",
+  "description": "API rest of help CI with Jenkins and Docker",
+  "keywords": [
+    "go",
+    "postgresql",
+    "CI",
+    "Jenkins",
+    "Docker",
+    "DEPlus"
+  ],
+  "version": "0.1",
+  "website": "https://github.com/betonr/deplus-api",
+  "repository": "https://github.com/betonr/deplus-api"
+}

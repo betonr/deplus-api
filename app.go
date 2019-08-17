@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/betonr/deplus-api/modules/status"
-	"github.com/betonr/deplus-api/modules/utils"
+	r "github.com/betonr/go-utils/rest"
 	"github.com/bmizerany/pat"
 )
 
@@ -23,11 +23,11 @@ func (app *App) initRoutes() {
 
 // Run - make start of Application
 func (app *App) Run(port string) {
-	handlers := utils.EnableCors(app.Router, utils.Cors{
+	handlers := r.EnableCors(app.Router, r.Cors{
 		Methods: []string{"GET", "POST", "PUT", "DELETE"},
 		Origins: []string{"*"},
 	})
-	handlers = utils.EnableLogs(handlers)
+	handlers = r.EnableLogs(handlers)
 
 	log.Println("** App started on port:", port, "**")
 	log.Fatal(http.ListenAndServe(":"+port, handlers))

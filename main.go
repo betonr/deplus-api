@@ -3,11 +3,11 @@ package main
 import (
 	"os"
 
-	"github.com/betonr/deplus-api/modules/utils"
+	b "github.com/betonr/go-utils/base"
 )
 
 func main() {
-	port := utils.GetBetween([]string{os.Getenv("PORT"), "5000"})
+	port := b.GetBetween([]string{os.Getenv("PORT"), "5000"})
 
 	app := App{}
 	app.initRoutes()

@@ -3,13 +3,13 @@ package status
 import (
 	"net/http"
 
-	"github.com/betonr/deplus-api/modules/utils"
+	r "github.com/betonr/go-utils/rest"
 )
 
 // GetStatus - return status of API
 func GetStatus(w http.ResponseWriter, req *http.Request) {
-	response := utils.DefaultResponse{
+	response := r.DefaultResponse{
 		Status:  http.StatusOK,
 		Message: "Running successfully"}
-	utils.RespondWithJson(w, http.StatusOK, response)
+	r.RespondWithJson(w, http.StatusOK, response)
 }
