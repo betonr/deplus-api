@@ -1,16 +1,42 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"os"
 
-	b "github.com/betonr/go-utils/base"
+	"github.com/betonr/deplus-api/modules/status"
+	ub "github.com/betonr/go-utils/base"
+	ur "github.com/betonr/go-utils/rest"
+	"github.com/bmizerany/pat"
 )
 
-func main() {
-	port := b.GetBetween([]string{os.Getenv("PORT"), "5000"})
+// Struct default at Application
+type app struct {
+	Router *pat.PatternServeMux
+}
 
-	app := App{}
+// set routes of Application
+func (a *app) initRoutes() {
+	a.Router = pat.New()
+
+	// status group
+	a.Router.Get("/status", http.HandlerFunc(status.GetStatus))
+}
+
+// make start of Application
+func main() {
+	port := ub.GetBetween([]string{os.Getenv("PORT"), "5000"})
+
+	app := app{}
 	app.initRoutes()
 
-	app.Run(port)
+	handlers := ur.EnableCors(app.Router, ur.Cors{
+		Methods: []string{"GET", "POST", "PUT", "DELETE"},
+		Origins: []string{"*"},
+	})
+	handlers = ur.EnableLogs(handlers)
+
+	log.Println("** App started on port:", port, "**")
+	log.Fatal(http.ListenAndServe(":"+port, handlers))
 }
