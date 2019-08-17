@@ -1,0 +1,24 @@
+{
+	"ImportPath": "github.com/betonr/deplus-api",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/asaskevich/govalidator",
+			"Comment": "v9-26-gf9ffefc",
+			"Rev": "f9ffefc3facfbe0caee3fea233cbb6e8208f4541"
+		},
+		{
+			"ImportPath": "github.com/betonr/go-utils/base",
+			"Rev": "67114932f52bfbdc7cab15d4971266595893eadb"
+		},
+		{
+			"ImportPath": "github.com/betonr/go-utils/rest",
+			"Rev": "67114932f52bfbdc7cab15d4971266595893eadb"
+		},
+		{
+			"ImportPath": "github.com/bmizerany/pat",
+			"Rev": "6226ea591a40176dd3ff9cd8eff81ed6ca721a00"
+		}
+	]
+}
