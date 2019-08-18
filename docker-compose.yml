@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  postgresql:
+    hostname: postgres
+    container_name: postgres
+    image: postgres
+    ports:
+      - 54321:5432
+    environment:
+      - POSTGRES_DB=deplus
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
